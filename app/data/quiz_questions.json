@@ -1,0 +1,134 @@
+[
+  {
+    "id": "quiz-001",
+    "question": "Was ist React?",
+    "explanation": "React ist eine JavaScript-Bibliothek von Meta zur Erstellung von Benutzeroberflächen. Es ist kein vollständiges Framework, sondern konzentriert sich auf die View-Schicht.",
+    "answers": [
+      { "id": "quiz-001-a", "text": "Eine JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen", "isCorrect": true },
+      { "id": "quiz-001-b", "text": "Eine Programmiersprache", "isCorrect": false },
+      { "id": "quiz-001-c", "text": "Ein CSS-Framework", "isCorrect": false },
+      { "id": "quiz-001-d", "text": "Ein Datenbankystem", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-002",
+    "question": "Was gibt eine React-Komponente zurück?",
+    "explanation": "Eine React-Komponente ist eine JavaScript-Funktion, die JSX zurückgibt. JSX beschreibt, wie die UI aussehen soll.",
+    "answers": [
+      { "id": "quiz-002-a", "text": "Einen String", "isCorrect": false },
+      { "id": "quiz-002-b", "text": "JSX", "isCorrect": true },
+      { "id": "quiz-002-c", "text": "Ein HTML-Dokument", "isCorrect": false },
+      { "id": "quiz-002-d", "text": "Ein JavaScript-Objekt", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-003",
+    "question": "Wie schreibt man in JSX eine CSS-Klasse?",
+    "explanation": "In JSX wird das Attribut class aus HTML zu className, weil class ein reserviertes Schlüsselwort in JavaScript ist.",
+    "answers": [
+      { "id": "quiz-003-a", "text": "class='meine-klasse'", "isCorrect": false },
+      { "id": "quiz-003-b", "text": "cssClass='meine-klasse'", "isCorrect": false },
+      { "id": "quiz-003-c", "text": "className='meine-klasse'", "isCorrect": true },
+      { "id": "quiz-003-d", "text": "style='meine-klasse'", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-004",
+    "question": "Was sind Props in React?",
+    "explanation": "Props sind Daten, die von einer Elternkomponente an eine Kindkomponente übergeben werden. Sie sind read-only und können von der Kindkomponente nicht verändert werden.",
+    "answers": [
+      { "id": "quiz-004-a", "text": "Der interne Zustand einer Komponente", "isCorrect": false },
+      { "id": "quiz-004-b", "text": "CSS-Eigenschaften", "isCorrect": false },
+      { "id": "quiz-004-c", "text": "Daten, die von einer Elternkomponente übergeben werden", "isCorrect": true },
+      { "id": "quiz-004-d", "text": "Datenbankabfragen", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-005",
+    "question": "Was bewirkt der useState-Hook?",
+    "explanation": "useState gibt ein Array mit zwei Elementen zurück: dem aktuellen State-Wert und einer Funktion zum Aktualisieren des Werts. Bei jeder Änderung rendert React die Komponente neu.",
+    "answers": [
+      { "id": "quiz-005-a", "text": "Er lädt Daten von einer API", "isCorrect": false },
+      { "id": "quiz-005-b", "text": "Er ermöglicht einer Komponente, einen internen Zustand zu verwalten", "isCorrect": true },
+      { "id": "quiz-005-c", "text": "Er definiert CSS-Stile", "isCorrect": false },
+      { "id": "quiz-005-d", "text": "Er verbindet eine Komponente mit einer Datenbank", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-006",
+    "question": "Wie übergibt man einen Event-Handler in JSX korrekt?",
+    "explanation": "Man übergibt die Funktion als Referenz ohne Klammern: onClick={handleClick}. Mit Klammern – onClick={handleClick()} – würde die Funktion sofort beim Rendern aufgerufen werden.",
+    "answers": [
+      { "id": "quiz-006-a", "text": "onclick={handleClick()}", "isCorrect": false },
+      { "id": "quiz-006-b", "text": "onClick={handleClick()}", "isCorrect": false },
+      { "id": "quiz-006-c", "text": "onClick={handleClick}", "isCorrect": true },
+      { "id": "quiz-006-d", "text": "on-click='handleClick'", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-007",
+    "question": "Wofür wird das key-Attribut bei Listen benötigt?",
+    "explanation": "React verwendet keys, um Listenelemente eindeutig zu identifizieren. So kann React effizient erkennen, welche Elemente sich geändert haben, hinzugefügt oder entfernt wurden.",
+    "answers": [
+      { "id": "quiz-007-a", "text": "Für CSS-Styling", "isCorrect": false },
+      { "id": "quiz-007-b", "text": "Als Passwort für geschützte Komponenten", "isCorrect": false },
+      { "id": "quiz-007-c", "text": "Damit React Listenelemente effizient identifizieren und aktualisieren kann", "isCorrect": true },
+      { "id": "quiz-007-d", "text": "Zum Sortieren der Liste", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-008",
+    "question": "Was passiert, wenn useEffect ein leeres Array [] als Abhängigkeitsliste erhält?",
+    "explanation": "Ein leeres Abhängigkeits-Array bedeutet, dass der Effekt nur einmal ausgeführt wird – direkt nach dem ersten Render. Das entspricht dem componentDidMount-Lifecycle in Klassenkomponenten.",
+    "answers": [
+      { "id": "quiz-008-a", "text": "Der Effekt wird bei jedem Render ausgeführt", "isCorrect": false },
+      { "id": "quiz-008-b", "text": "Der Effekt wird nie ausgeführt", "isCorrect": false },
+      { "id": "quiz-008-c", "text": "Der Effekt wird nur einmal nach dem ersten Render ausgeführt", "isCorrect": true },
+      { "id": "quiz-008-d", "text": "Der Effekt wird nur ausgeführt, wenn ein Fehler auftritt", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-009",
+    "question": "Was ist das Virtual DOM?",
+    "explanation": "Das Virtual DOM ist eine JavaScript-Darstellung des echten DOM im Arbeitsspeicher. React vergleicht bei Änderungen das neue mit dem alten Virtual DOM und aktualisiert nur die tatsächlich veränderten Teile im echten DOM.",
+    "answers": [
+      { "id": "quiz-009-a", "text": "Ein spezielles HTML-Element", "isCorrect": false },
+      { "id": "quiz-009-b", "text": "Eine JavaScript-Darstellung des DOM, die React für effiziente Updates nutzt", "isCorrect": true },
+      { "id": "quiz-009-c", "text": "Eine Datenbank für React-Anwendungen", "isCorrect": false },
+      { "id": "quiz-009-d", "text": "Ein Browser-Plugin", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-010",
+    "question": "Woran erkennt React, dass eine Funktion ein Custom Hook ist?",
+    "explanation": "Custom Hooks müssen mit dem Präfix use beginnen, z. B. useWindowWidth oder useFetch. Das ist eine Konvention, an der React und Linting-Tools Custom Hooks erkennen.",
+    "answers": [
+      { "id": "quiz-010-a", "text": "Sie muss mit hook beginnen", "isCorrect": false },
+      { "id": "quiz-010-b", "text": "Sie muss mit use beginnen", "isCorrect": true },
+      { "id": "quiz-010-c", "text": "Sie muss mit custom beginnen", "isCorrect": false },
+      { "id": "quiz-010-d", "text": "Sie muss mit React. beginnen", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-011",
+    "question": "Können Props von der empfangenden Komponente verändert werden?",
+    "explanation": "Nein. Props sind read-only. Eine Komponente darf ihre eigenen Props niemals direkt verändern. Wenn Daten verändert werden müssen, nutzt man State.",
+    "answers": [
+      { "id": "quiz-011-a", "text": "Ja, immer", "isCorrect": false },
+      { "id": "quiz-011-b", "text": "Ja, aber nur bei Klassen-Komponenten", "isCorrect": false },
+      { "id": "quiz-011-c", "text": "Nein, Props sind read-only", "isCorrect": true },
+      { "id": "quiz-011-d", "text": "Nur wenn man useState verwendet", "isCorrect": false }
+    ]
+  },
+  {
+    "id": "quiz-012",
+    "question": "Was ist der Hauptvorteil von Komponenten-Komposition?",
+    "explanation": "Durch Komposition kann man große, komplexe UIs aus kleinen, wiederverwendbaren Komponenten zusammensetzen. Das macht den Code übersichtlicher, testbarer und einfacher zu warten.",
+    "answers": [
+      { "id": "quiz-012-a", "text": "Schnellere Datenbankzugriffe", "isCorrect": false },
+      { "id": "quiz-012-b", "text": "Bessere SEO", "isCorrect": false },
+      { "id": "quiz-012-c", "text": "Wiederverwendbarer, übersichtlicher und wartbarer Code", "isCorrect": true },
+      { "id": "quiz-012-d", "text": "Automatisches CSS-Styling", "isCorrect": false }
+    ]
+  }
+]

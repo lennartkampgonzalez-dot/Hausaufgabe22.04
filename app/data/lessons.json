@@ -1,0 +1,98 @@
+[
+  {
+    "id": "lesson-001",
+    "title": "Was ist React?",
+    "topic": "Grundlagen",
+    "type": "text",
+    "level": "beginner",
+    "content": "React ist eine JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen. Sie wurde von Meta (ehemals Facebook) entwickelt und wird heute von Millionen Entwicklern weltweit genutzt. React basiert auf dem Konzept von Komponenten – wiederverwendbaren Bausteinen, aus denen eine Benutzeroberfläche zusammengesetzt wird. Jede Komponente beschreibt, wie ein Teil der UI aussehen soll. React kümmert sich dann darum, die Anzeige effizient zu aktualisieren, wenn sich Daten ändern."
+  },
+  {
+    "id": "lesson-002",
+    "title": "Komponenten in React",
+    "topic": "Grundlagen",
+    "type": "text",
+    "level": "beginner",
+    "content": "Eine React-Komponente ist eine JavaScript-Funktion, die JSX zurückgibt. JSX sieht aus wie HTML, ist aber eigentlich JavaScript. Beispiel: function Greeting() { return <h1>Hallo Welt!</h1>; } Komponenten können beliebig oft wiederverwendet werden. Man schreibt eine Komponente einmal und nutzt sie an vielen Stellen. Komponenten beginnen immer mit einem Großbuchstaben, damit React sie von normalen HTML-Elementen unterscheiden kann."
+  },
+  {
+    "id": "lesson-003",
+    "title": "JSX verstehen",
+    "topic": "Grundlagen",
+    "type": "text",
+    "level": "beginner",
+    "content": "JSX steht für JavaScript XML. Es erlaubt uns, HTML-ähnlichen Code direkt in JavaScript zu schreiben. JSX ist kein echter HTML-Code – hinter den Kulissen wird JSX in normale JavaScript-Funktionsaufrufe umgewandelt. In JSX schreibt man Klassen nicht als class, sondern als className. Event-Handler wie onclick heißen in JSX onClick (camelCase). Jeder JSX-Ausdruck muss genau ein Wurzelelement haben."
+  },
+  {
+    "id": "lesson-004",
+    "title": "Props – Daten an Komponenten übergeben",
+    "topic": "Grundlagen",
+    "type": "text",
+    "level": "beginner",
+    "content": "Props (kurz für Properties) sind der Weg, wie Daten von einer Elternkomponente an eine Kindkomponente übergeben werden. Props sind wie Attribute bei HTML-Elementen. Beispiel: <Greeting name='Anna' /> In der Komponente empfängt man Props als Objekt: function Greeting(props) { return <h1>Hallo {props.name}!</h1>; } Oder mit Destructuring: function Greeting({ name }) { return <h1>Hallo {name}!</h1>; } Props sind read-only – eine Komponente darf ihre eigenen Props nicht verändern."
+  },
+  {
+    "id": "lesson-005",
+    "title": "State mit useState",
+    "topic": "Hooks",
+    "type": "text",
+    "level": "beginner",
+    "content": "State ist der interne Zustand einer Komponente. Im Gegensatz zu Props kann State von der Komponente selbst verändert werden. Der useState-Hook gibt uns zwei Dinge: den aktuellen Wert und eine Funktion zum Ändern des Werts. Beispiel: const [count, setCount] = useState(0); Immer wenn setCount aufgerufen wird, rendert React die Komponente neu und zeigt den neuen Wert an. State-Änderungen lösen also ein Re-Rendering aus."
+  },
+  {
+    "id": "lesson-006",
+    "title": "Event Handling in React",
+    "topic": "Grundlagen",
+    "type": "text",
+    "level": "beginner",
+    "content": "In React werden Events über spezielle Attribute direkt am JSX-Element definiert. Statt onclick (HTML) schreibt man onClick (JSX). Beispiel: <button onClick={handleClick}>Klick mich</button> Die Event-Handler-Funktion wird als Referenz übergeben, nicht aufgerufen. Das heißt: onClick={handleClick} ist richtig – onClick={handleClick()} würde die Funktion sofort aufrufen. Häufige Events sind onClick, onChange, onSubmit und onKeyDown."
+  },
+  {
+    "id": "lesson-007",
+    "title": "Bedingtes Rendering",
+    "topic": "Grundlagen",
+    "type": "text",
+    "level": "intermediate",
+    "content": "In React kann man Teile der UI abhängig von Bedingungen anzeigen oder verstecken. Dafür gibt es mehrere Möglichkeiten. Mit einem if-Statement: if (isLoggedIn) { return <Dashboard />; } return <Login />; Mit dem ternären Operator direkt in JSX: { isLoggedIn ? <Dashboard /> : <Login /> } Mit dem &&-Operator für einfache Fälle: { isLoggedIn && <Dashboard /> } Alle drei Varianten sind in der Praxis üblich."
+  },
+  {
+    "id": "lesson-008",
+    "title": "Listen und Keys",
+    "topic": "Grundlagen",
+    "type": "text",
+    "level": "intermediate",
+    "content": "In React rendert man Listen mit der JavaScript-Methode map(). Beispiel: const items = ['Apple', 'Banana', 'Cherry']; return ( <ul> {items.map((item) => <li key={item}>{item}</li>)} </ul> ); Das key-Attribut ist wichtig: React nutzt es intern, um Listenelemente effizient zu identifizieren und zu aktualisieren. Keys müssen unter Geschwisterelementen eindeutig sein. Idealerweise nutzt man IDs aus den Daten als Key – nicht den Index des Arrays."
+  },
+  {
+    "id": "lesson-009",
+    "title": "useEffect – Seiteneffekte verwalten",
+    "topic": "Hooks",
+    "type": "text",
+    "level": "intermediate",
+    "content": "useEffect ist ein Hook für Seiteneffekte – also alles, was außerhalb des reinen Renderns passiert: API-Aufrufe, Timer, Event-Listener. Syntax: useEffect(() => { // Effekt-Code }, [abhängigkeiten]); Das Abhängigkeits-Array bestimmt, wann der Effekt ausgeführt wird. Leeres Array []: nur beim ersten Render. Mit Wert [count]: bei jedem Render, bei dem sich count geändert hat. Ohne Array: bei jedem Render. Die Cleanup-Funktion (return im Effekt) wird ausgeführt, bevor die Komponente unmountet oder der Effekt erneut läuft."
+  },
+  {
+    "id": "lesson-010",
+    "title": "Komponenten-Komposition",
+    "topic": "Architektur",
+    "type": "text",
+    "level": "intermediate",
+    "content": "Komposition bedeutet, dass man große Komponenten aus kleineren zusammensetzt. Statt eine riesige Komponente zu schreiben, teilt man die UI in überschaubare Teile. Beispiel: Eine Seite könnte aus <Header />, <Sidebar /> und <MainContent /> bestehen. MainContent wiederum aus <ArticleList /> und <Pagination />. Dieses Prinzip macht den Code wiederverwendbar, testbar und leichter zu verstehen. Eine gute Faustregel: Wenn eine Komponente zu groß wird oder mehrere Aufgaben hat, ist es Zeit, sie aufzuteilen."
+  },
+  {
+    "id": "lesson-011",
+    "title": "Das Virtual DOM",
+    "topic": "Konzepte",
+    "type": "text",
+    "level": "intermediate",
+    "content": "React nutzt ein sogenanntes Virtual DOM. Das ist eine JavaScript-Darstellung des echten DOM im Arbeitsspeicher. Wenn sich der State ändert, erstellt React eine neue Virtual-DOM-Darstellung und vergleicht sie mit der alten (dieser Vorgang heißt Reconciliation oder Diffing). Nur die tatsächlich veränderten Teile werden dann im echten DOM aktualisiert. Das macht React-Anwendungen performant, weil DOM-Operationen teuer sind und React sie auf das Minimum reduziert."
+  },
+  {
+    "id": "lesson-012",
+    "title": "Custom Hooks",
+    "topic": "Hooks",
+    "type": "text",
+    "level": "advanced",
+    "content": "Custom Hooks sind eigene Hooks, die man selbst schreibt, um Logik zwischen Komponenten zu teilen. Ein Custom Hook ist einfach eine Funktion, deren Name mit use beginnt und die andere Hooks aufruft. Beispiel: function useWindowWidth() { const [width, setWidth] = useState(window.innerWidth); useEffect(() => { const handler = () => setWidth(window.innerWidth); window.addEventListener('resize', handler); return () => window.removeEventListener('resize', handler); }, []); return width; } Damit kann jede Komponente useWindowWidth() aufrufen, ohne die Logik zu duplizieren."
+  }
+]
